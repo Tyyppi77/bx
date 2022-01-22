@@ -18,11 +18,9 @@ inline void operator delete(void*, bx::PlacementNewTag, void*) throw()
 
 namespace bx
 {
-	/*
 	inline AllocatorI::~AllocatorI()
 	{
 	}
-	*/
 
 	inline void* alignPtr(void* _ptr, size_t _extra, size_t _align)
 	{
