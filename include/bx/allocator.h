@@ -45,7 +45,7 @@ namespace bx
 	struct BX_NO_VTABLE AllocatorI
 	{
 		///
-		virtual ~AllocatorI() = 0;
+		virtual ~AllocatorI() /*= 0*/;
 
 		/// Allocates, resizes memory block, or frees memory.
 		///

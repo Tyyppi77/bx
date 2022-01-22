@@ -18,9 +18,11 @@ inline void operator delete(void*, bx::PlacementNewTag, void*) throw()
 
 namespace bx
 {
+	/*
 	inline AllocatorI::~AllocatorI()
 	{
 	}
+	*/
 
 	inline void* alignPtr(void* _ptr, size_t _extra, size_t _align)
 	{
@@ -58,9 +60,8 @@ namespace bx
 		return aligned;
 	}
 
-	inline void alignedFree(AllocatorI* _allocator, void* _ptr, size_t _align, const char* _file, uint32_t _line)
+	inline void alignedFree(AllocatorI* _allocator, void* _ptr, size_t, const char* _file, uint32_t _line)
 	{
-		BX_UNUSED(_align);
 		uint8_t* aligned = (uint8_t*)_ptr;
 		uint32_t* header = (uint32_t*)aligned - 1;
 		uint8_t* ptr = aligned - *header;
